@@ -2,7 +2,7 @@
 
 Learn Its generates a fresh, multi-screen AI lesson on any topic you type in, with illustrations, tappable term definitions, and optional spoken narration. It's available on iPhone, iPad, and Mac.
 
-- [Support & FAQ](README.md)
+- [Support & FAQ](SUPPORT.md)
 - [Privacy Policy](PRIVACY.md)
 - [Terms of Use (Apple's Standard EULA)](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/)
 
