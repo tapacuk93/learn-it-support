@@ -1,39 +1,36 @@
 # Privacy Policy
 
-**Last updated: 2026-08-04**
+**Last updated: 2026-08-08**
 
 Learn Its (iPhone, iPad, and Mac) is designed to collect as little data as possible. This policy explains exactly what the app does and does not do with your information, and applies the same way on every platform.
 
 ## Data we don't collect
 
-Learn Its has no backend server of its own for lesson content, no user accounts, and no analytics or tracking SDKs. We (the developer) do not receive, store, or have access to your topics, lesson history, bookmarks, or API keys.
+Learn Its has no user accounts and no analytics or tracking SDKs. We (the developer) do not receive, store, or have access to your topics, lesson history, or bookmarks.
 
-## Your API keys
+## How AI requests work (no personal API keys)
 
-The app can use your own API key for Anthropic (Claude), Google Gemini, or an OpenAI-compatible provider — whichever you choose in Settings. You can also optionally add a key for ElevenLabs (spoken narration). Each key is:
-- Stored only on your device, in the iOS/macOS Keychain — never synced or sent to any server we control.
-- Sent only directly to that provider's own API (e.g. `api.anthropic.com`, `generativelanguage.googleapis.com`, `api.elevenlabs.io`, or the OpenAI-compatible endpoint you configure), never to us.
+The app does **not** ask you for your own AI provider API key. Every request to generate a lesson, its illustrations, or narration audio is sent to our own relay server, **aicoin-proxy**, at `apps.oeaio.com`. aicoin-proxy adds its own paid credential for whichever AI provider the request is for, forwards your request unchanged, and returns the response — you never handle or expose a provider credential, and we never see one of yours because there isn't one.
 
-Usage of each key is billed directly by that provider to your own account.
-- [Anthropic's privacy policy](https://www.anthropic.com/legal/privacy)
-- [Google's privacy policy](https://policies.google.com/privacy)
-- [ElevenLabs' privacy policy](https://elevenlabs.io/privacy)
+**1 AICoin = 1 AI API call.** Each lesson screen, illustration, or narration clip costs exactly 1 AICoin, debited from your AICoin wallet at the moment of the call.
 
-Each provider publishes its own privacy policy on its website; check there for details on how it handles API traffic.
+## AICoin wallet
 
-## aicoin Wallet (optional alternative to your own key)
+Your wallet is identified by a keypair generated and stored on your device (Keychain) — we never see your private key. There are two ways to get AICoin:
+- **Buy it**, via an in-app purchase processed entirely by Apple through StoreKit. We never see or store your payment details — Apple handles billing and receipts directly. A successful purchase credits your wallet by contacting `apps.oeaio.com` with Apple's own signed proof of purchase.
+- **Receive a transfer** from another AICoin wallet (yours on another device, or someone else's).
 
-Instead of a personal API key, you can choose "aicoin Wallet" in Settings and pay per lesson generation from a wallet balance. When this option is selected, your lesson-generation request is routed through our proxy at `aicoin.oeaio.com`, tagged with which AI provider it's for and your wallet ID, before being forwarded to that provider. If your wallet balance is insufficient, the app automatically retries the same request using your personal API key instead, if you've configured one.
+Your wallet address and balance are stored server-side at `apps.oeaio.com` (see the [aicoin.oeaio.com](https://aicoin.oeaio.com) site for how the ledger works) — this is necessary for the wallet to function across devices and to debit calls, and is not linked to your name, email, or Apple ID.
 
 ## Lesson content
 
-Whatever topic you type in is sent to your chosen AI provider (directly, or via the aicoin Wallet proxy above) to generate the lesson text. If you've added an ElevenLabs key, screen text is also sent to ElevenLabs to generate spoken narration.
+Whatever topic you type in is relayed (via aicoin-proxy) to Claude, Gemini, or another supported AI provider to generate the lesson text and illustrations. If narration is enabled, screen text is also relayed to ElevenLabs to generate spoken narration.
 
 Your subjects, lessons, history, and bookmarks are stored locally on your device only — there is no iCloud sync and no server-side copy. Uninstalling the app, or deleting it from a device, deletes that device's copy permanently.
 
 ## Images
 
-To show an illustration alongside a lesson screen, the app either asks your configured AI provider to generate one, or looks up a real photo via Wikipedia's image search API (`wikipedia.org`), depending on which fits the topic and screen. Only the text needed to generate or find a matching image is sent — never your API key.
+To show an illustration alongside a lesson screen, the app either asks the AI provider (via the relay) to generate one, or looks up a real photo via Wikipedia's image search API (`wikipedia.org`), depending on which fits the topic and screen. Only the text needed to generate or find a matching image is sent.
 
 ## Achievements export
 
@@ -42,11 +39,11 @@ The Achievements tab can export your learning activity as a file signed using Ap
 ## Third parties
 
 The only third parties involved are:
-- **Anthropic, Google, or an OpenAI-compatible provider** — whichever you configure, to generate lesson text.
-- **ElevenLabs** — only if you add a key, to generate spoken narration.
-- **aicoin Wallet proxy** (`aicoin.oeaio.com`) — only if you choose that payment method, to relay generation requests to the underlying AI provider.
+- **aicoin-proxy** (`apps.oeaio.com`, operated by us) — relays every AI request below with its own paid credentials and debits your wallet; see [aicoin.oeaio.com](https://aicoin.oeaio.com) for how it works.
+- **Anthropic, Google, or another AI provider we route to** — generates lesson text and illustrations.
+- **ElevenLabs** — only if narration is enabled, to generate spoken audio.
 - **Wikipedia** (`wikipedia.org`) — to look up illustrative photos and full articles for lesson terms.
-- **Apple** — App Attest, for signing achievement exports.
+- **Apple** — App Attest (for signing achievement exports) and StoreKit (for AICoin purchases), both under your own Apple ID and governed by Apple's own privacy policy.
 
 We don't share data with anyone else, and we don't sell data — there's no data collected on our end to sell.
 
