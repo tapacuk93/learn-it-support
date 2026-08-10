@@ -10,17 +10,17 @@ Learn Its has no user accounts and no analytics or tracking SDKs. We (the develo
 
 ## How AI requests work (no personal API keys)
 
-The app does **not** ask you for your own AI provider API key. Every request to generate a lesson, its illustrations, or narration audio is sent to our own relay server, **aicoin-proxy**, at `apps.oeaio.com`. aicoin-proxy adds its own paid credential for whichever AI provider the request is for, forwards your request unchanged, and returns the response — you never handle or expose a provider credential, and we never see one of yours because there isn't one.
+The app does **not** ask you for your own AI provider API key. Every request to generate a lesson, its illustrations, or narration audio is sent to our own relay server, **aicoin-proxy**, at `proxy.aicoin.oeaio.com`. aicoin-proxy adds its own paid credential for whichever AI provider the request is for, forwards your request unchanged, and returns the response — you never handle or expose a provider credential, and we never see one of yours because there isn't one.
 
 **1 AICoin = 1 AI API call.** Each lesson screen, illustration, or narration clip costs exactly 1 AICoin, debited from your AICoin wallet at the moment of the call.
 
 ## AICoin wallet
 
 Your wallet is identified by a keypair generated and stored on your device (Keychain) — we never see your private key. There are two ways to get AICoin:
-- **Buy it**, via an in-app purchase processed entirely by Apple through StoreKit. We never see or store your payment details — Apple handles billing and receipts directly. A successful purchase credits your wallet by contacting `apps.oeaio.com` with Apple's own signed proof of purchase.
+- **Buy it**, via an in-app purchase processed entirely by Apple through StoreKit. We never see or store your payment details — Apple handles billing and receipts directly. A successful purchase credits your wallet by contacting `proxy.aicoin.oeaio.com` with Apple's own signed proof of purchase.
 - **Receive a transfer** from another AICoin wallet (yours on another device, or someone else's).
 
-Your wallet address and balance are stored server-side at `apps.oeaio.com` (see the [aicoin.oeaio.com](https://aicoin.oeaio.com) site for how the ledger works) — this is necessary for the wallet to function across devices and to debit calls, and is not linked to your name, email, or Apple ID.
+Your wallet address and balance are stored server-side at `proxy.aicoin.oeaio.com` (see the [aicoin.oeaio.com](https://aicoin.oeaio.com) site for how the ledger works) — this is necessary for the wallet to function across devices and to debit calls, and is not linked to your name, email, or Apple ID.
 
 ## Lesson content
 
@@ -39,7 +39,7 @@ The Achievements tab can export your learning activity as a file signed using Ap
 ## Third parties
 
 The only third parties involved are:
-- **aicoin-proxy** (`apps.oeaio.com`, operated by us) — relays every AI request below with its own paid credentials and debits your wallet; see [aicoin.oeaio.com](https://aicoin.oeaio.com) for how it works.
+- **aicoin-proxy** (`proxy.aicoin.oeaio.com`, operated by us) — relays every AI request below with its own paid credentials and debits your wallet; see [aicoin.oeaio.com](https://aicoin.oeaio.com) for how it works.
 - **Anthropic, Google, or another AI provider we route to** — generates lesson text and illustrations.
 - **ElevenLabs** — only if narration is enabled, to generate spoken audio.
 - **Wikipedia** (`wikipedia.org`) — to look up illustrative photos and full articles for lesson terms.
