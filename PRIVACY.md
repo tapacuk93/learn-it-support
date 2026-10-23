@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated: 2026-08-08**
+**Last updated: 2026-10-23**
 
 Learn Its (iPhone, iPad, and Mac) is designed to collect as little data as possible. This policy explains exactly what the app does and does not do with your information, and applies the same way on every platform.
 
@@ -10,9 +10,15 @@ Learn Its has no user accounts and no analytics or tracking SDKs. We (the develo
 
 ## How AI requests work (no personal API keys)
 
-The app does **not** ask you for your own AI provider API key. Every request to generate a lesson, its illustrations, or narration audio is sent to our own relay server, **aicoin-proxy**, at `proxy.aicoin.oeaio.com`. aicoin-proxy adds its own paid credential for whichever AI provider the request is for, forwards your request unchanged, and returns the response — you never handle or expose a provider credential, and we never see one of yours because there isn't one.
+The app does **not** ask you for your own AI provider API key. Every request to generate a lesson, its illustrations, or narration audio is sent to our own relay server, **aicoin-proxy**, at `proxy.aicoin.oeaio.com`. aicoin-proxy adds its own paid credential for whichever AI provider the request is for, forwards your request to that provider, and returns the response — you never handle or expose a provider credential, and we never see one of yours because there isn't one.
 
-**1 AICoin = 1 AI API call.** Each lesson screen, illustration, or narration clip costs exactly 1 AICoin, debited from your AICoin wallet at the moment of the call.
+**AI calls are paid for in AICoin, priced by what they cost to run.** Each lesson screen, illustration, or narration clip costs from 1 AICoin — a longer one costs more — debited from your AICoin wallet at the moment of the call.
+
+### What the relay keeps, and what the providers keep
+
+- **The relay does not log or store what you send or get back** — no topics, lesson text, illustrations or audio. For each request it keeps only a line of metadata: the time, the kind of request and the provider's endpoint (without query parameters), which provider, your wallet address, the result status, sizes, timings, and the AICoin charged. Those logs rotate and are capped in size.
+- **The AI providers do receive your requests**, and keep them under their own retention policies: [Anthropic](https://www.anthropic.com/legal/privacy), [OpenAI](https://openai.com/privacy), [Google](https://policies.google.com/privacy), [Mistral AI](https://mistral.ai/terms#privacy-policy), [ElevenLabs](https://elevenlabs.io/privacy).
+- **Nothing you send is stored on a provider where other users could reach it.** Every user's requests go through the same provider accounts, so the relay only forwards requests to providers' generation endpoints and refuses the provider features that store things on the account — file uploads, batch jobs, stored responses and conversations, caches, and generation history.
 
 ## AICoin wallet
 
@@ -24,7 +30,7 @@ Your wallet address and balance are stored server-side at `proxy.aicoin.oeaio.co
 
 ## Lesson content
 
-Whatever topic you type in is relayed (via aicoin-proxy) to Claude, Gemini, or another supported AI provider to generate the lesson text and illustrations. If narration is enabled, screen text is also relayed to ElevenLabs to generate spoken narration.
+Whatever topic you type in is relayed (via aicoin-proxy) to the AI provider you've chosen — Claude (Anthropic), OpenAI, Gemini (Google), or Mistral — to generate the lesson text and illustrations. If narration is enabled, screen text is also relayed to ElevenLabs to generate spoken narration.
 
 Your subjects, lessons, history, and bookmarks are stored locally on your device only — there is no iCloud sync and no server-side copy. Uninstalling the app, or deleting it from a device, deletes that device's copy permanently.
 
@@ -40,7 +46,7 @@ The Achievements tab can export your learning activity as a file signed using Ap
 
 The only third parties involved are:
 - **aicoin-proxy** (`proxy.aicoin.oeaio.com`, operated by us) — relays every AI request below with its own paid credentials and debits your wallet; see [aicoin.oeaio.com](https://aicoin.oeaio.com) for how it works.
-- **Anthropic, Google, or another AI provider we route to** — generates lesson text and illustrations.
+- **Anthropic, OpenAI, Google, or Mistral** — whichever you've chosen, to generate lesson text and illustrations.
 - **ElevenLabs** — only if narration is enabled, to generate spoken audio.
 - **Wikipedia** (`wikipedia.org`) — to look up illustrative photos and full articles for lesson terms.
 - **Apple** — App Attest (for signing achievement exports) and StoreKit (for AICoin purchases), both under your own Apple ID and governed by Apple's own privacy policy.
