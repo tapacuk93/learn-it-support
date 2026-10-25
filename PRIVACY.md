@@ -2,11 +2,11 @@
 
 **Last updated: 2026-10-23**
 
-Learn Its (iPhone, iPad, and Mac) is designed to collect as little data as possible. This policy explains exactly what the app does and does not do with your information, and applies the same way on every platform.
+All AI Learn (iPhone, iPad, and Mac) is designed to collect as little data as possible. This policy explains exactly what the app does and does not do with your information, and applies the same way on every platform.
 
 ## Data we don't collect
 
-Learn Its has no user accounts and no analytics or tracking SDKs. We (the developer) do not receive, store, or have access to your topics, lesson history, or bookmarks.
+All AI Learn has no user accounts and no analytics or tracking SDKs. We (the developer) do not receive, store, or have access to your topics, lesson history, or bookmarks.
 
 ## How AI requests work (no personal API keys)
 

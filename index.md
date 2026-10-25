@@ -1,6 +1,6 @@
-# Learn Its — Support
+# All AI Learn — Support
 
-Learn Its generates a fresh, multi-screen AI lesson on any topic you type in, with illustrations, tappable term definitions, and optional spoken narration. It's available on iPhone, iPad, and Mac.
+All AI Learn generates a fresh, multi-screen AI lesson on any topic you type in, with illustrations, tappable term definitions, and optional spoken narration. It's available on iPhone, iPad, and Mac.
 
 - [Support & FAQ](SUPPORT.md)
 - [Privacy Policy](PRIVACY.md)
