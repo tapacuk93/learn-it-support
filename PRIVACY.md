@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated: 2026-10-23**
+**Last updated: 2026-10-25**
 
 All AI Learn (iPhone, iPad, and Mac) is designed to collect as little data as possible. This policy explains exactly what the app does and does not do with your information, and applies the same way on every platform.
 
@@ -30,7 +30,7 @@ Your wallet address and balance are stored server-side at `proxy.aicoin.oeaio.co
 
 ## Lesson content
 
-Whatever topic you type in is relayed (via aicoin-proxy) to the AI provider you've chosen — Claude (Anthropic), OpenAI, Gemini (Google), or Mistral — to generate the lesson text and illustrations. If narration is enabled, screen text is also relayed to ElevenLabs to generate spoken narration.
+Whatever topic you type in is relayed (via aicoin-proxy) to the AI provider you've chosen — Claude (Anthropic), OpenAI, Gemini (Google), or Mistral — to generate the lesson text and illustrations. If the natural AI voice is turned on, screen text is also relayed to ElevenLabs to generate spoken narration, or, for a language ElevenLabs doesn't speak, to Google (Gemini or Cloud Text-to-Speech) or OpenAI. With it off, the device's built-in voice reads on the device and nothing is sent.
 
 Your subjects, lessons, history, and bookmarks are stored locally on your device only — there is no iCloud sync and no server-side copy. Uninstalling the app, or deleting it from a device, deletes that device's copy permanently.
 
@@ -47,7 +47,7 @@ The Achievements tab can export your learning activity as a file signed using Ap
 The only third parties involved are:
 - **aicoin-proxy** (`proxy.aicoin.oeaio.com`, operated by us) — relays every AI request below with its own paid credentials and debits your wallet; see [aicoin.oeaio.com](https://aicoin.oeaio.com) for how it works.
 - **Anthropic, OpenAI, Google, or Mistral** — whichever you've chosen, to generate lesson text and illustrations.
-- **ElevenLabs** — only if narration is enabled, to generate spoken audio.
+- **ElevenLabs, and Google or OpenAI for languages ElevenLabs doesn't speak** — only if the natural AI voice is turned on, to generate spoken audio.
 - **Wikipedia** (`wikipedia.org`) — to look up illustrative photos and full articles for lesson terms.
 - **Apple** — App Attest (for signing achievement exports) and StoreKit (for AICoin purchases), both under your own Apple ID and governed by Apple's own privacy policy.
 

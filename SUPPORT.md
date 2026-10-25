@@ -8,7 +8,7 @@ All AI Learn generates a fresh, multi-screen AI lesson on any topic you type in 
 Type a topic into "What would you like to learn?" and tap Start learning. The app generates a short multi-screen lesson on that topic.
 
 **Do I need my own API key?**
-Yes, unless you're using the aicoin Wallet payment option. All AI Learn uses an AI provider — Anthropic Claude, Google Gemini, or an OpenAI-compatible provider — to generate lessons. Add your own API key for one of these in Settings, and usage is billed directly by that provider to your account. Alternatively, you can fund an aicoin Wallet in Settings and pay per generation through that instead of a personal key.
+No. All AI Learn pays for AI calls with AICoin from a wallet it creates on your device the first time it runs, and claims some free starter coins for it when they are available. More can be bought in Settings. There are no API keys to enter.
 
 **Can I go deeper into a specific idea from a lesson?**
 Yes. Tap "Dive deeper" under any screen to branch into a new, more specific lesson on that idea. You can always find your way back to the lesson you branched from.
@@ -20,7 +20,7 @@ Tap a highlighted term to see its definition in a popover, with a link to read m
 Yes. Each screen tries to show a relevant image — either AI-generated or a real photo found via Wikipedia's image search, whichever fits the topic and screen better. If neither is available, the lesson still works without one.
 
 **Can I have lessons read aloud?**
-Yes. Add an ElevenLabs API key in Settings to enable spoken narration for lesson text.
+Yes, in any language the app offers. By default the device's built-in voice reads, which is free. Turn on "Use natural AI voice" in Settings for ElevenLabs narration, or Google Gemini or OpenAI for a language ElevenLabs doesn't speak. It costs from 1 AICoin each time a screen is read. If no AI voice speaks a language, the device's voice still reads it.
 
 **Can I revisit past lessons, or save specific ones?**
 Yes. History keeps every subject you've opened, and Bookmarks lets you save specific ones to find again quickly.
@@ -36,7 +36,7 @@ Please [open an issue](https://github.com/tapacuk93/learn-it-support/issues) on 
 
 ## Privacy
 
-See our [Privacy Policy](PRIVACY.md) for details on how your API key, topics, and lesson data are handled.
+See our [Privacy Policy](PRIVACY.md) for details on how your topics, lesson data, and AICoin wallet are handled.
 
 ## Contact
 
