@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated: 2026-10-25**
+**Last updated: 2026-11-04**
 
 All AI Learn (iPhone, iPad, and Mac) is designed to collect as little data as possible. This policy explains exactly what the app does and does not do with your information, and applies the same way on every platform.
 
@@ -32,6 +32,10 @@ Your wallet address and balance are stored server-side at `proxy.aicoin.oeaio.co
 
 Whatever topic you type in is relayed (via aicoin-proxy) to the AI provider you've chosen — Claude (Anthropic), OpenAI, Gemini (Google), or Mistral — to generate the lesson text and illustrations. If the natural AI voice is turned on, screen text is also relayed to ElevenLabs to generate spoken narration, or, for a language ElevenLabs doesn't speak, to Google (Gemini or Cloud Text-to-Speech) or OpenAI. With it off, the device's built-in voice reads on the device and nothing is sent.
 
+### On the China mainland App Store
+
+When your App Store account is in the China mainland storefront (the app reads this from the App Store, not from your device's region settings), **the app does not use OpenAI, and nothing is sent to OpenAI**. OpenAI is not offered as a provider for lesson text or illustrations, so lesson text comes only from Claude, Gemini or Mistral, and AI illustrations only from Gemini; a text provider set to OpenAI earlier switches to one of those, and an illustration provider set to OpenAI earlier switches to no AI illustrations until you choose another. The natural AI voice uses only ElevenLabs or Google, and a language that only OpenAI could narrate is read by the device's built-in voice. Subjects made earlier with OpenAI are shown as made by "Other AI", including in an achievements export. The relay also refuses to forward any request from that storefront to OpenAI. Everything else in this policy applies as written.
+
 Your subjects, lessons, history, and bookmarks are stored locally on your device only — there is no iCloud sync and no server-side copy. Uninstalling the app, or deleting it from a device, deletes that device's copy permanently.
 
 ## Images
@@ -48,6 +52,7 @@ The only third parties involved are:
 - **aicoin-proxy** (`proxy.aicoin.oeaio.com`, operated by us) — relays every AI request below with its own paid credentials and debits your wallet; see [aicoin.oeaio.com](https://aicoin.oeaio.com) for how it works.
 - **Anthropic, OpenAI, Google, or Mistral** — whichever you've chosen, to generate lesson text and illustrations.
 - **ElevenLabs, and Google or OpenAI for languages ElevenLabs doesn't speak** — only if the natural AI voice is turned on, to generate spoken audio.
+- On the China mainland App Store, OpenAI is not used for anything and receives nothing (see above).
 - **Wikipedia** (`wikipedia.org`) — to look up illustrative photos and full articles for lesson terms.
 - **Apple** — App Attest (for signing achievement exports) and StoreKit (for AICoin purchases), both under your own Apple ID and governed by Apple's own privacy policy.
 
